@@ -9,10 +9,11 @@ const Header = () => {
 
   const navigation = [
     { name: "Expertises", href: "/services", hasDropdown: true },
-    { name: "Agences", href: "/about", hasDropdown: true },
-    { name: "Cas clients", href: "/case-studies", hasDropdown: false },
-    { name: "Ressources", href: "/resources", hasDropdown: true },
-    { name: "Nous découvrir", href: "/contact", hasDropdown: true }
+    { name: "Équipe", href: "/team", hasDropdown: false },
+    { name: "Réalisations", href: "/case-studies", hasDropdown: false },
+    { name: "Blog", href: "/blog", hasDropdown: false },
+    { name: "Carrières", href: "/careers", hasDropdown: false },
+    { name: "Ressources", href: "/resources", hasDropdown: true }
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -43,6 +44,16 @@ const Header = () => {
                 </Link>
               </div>
             ))}
+            
+            {/* Additional direct links */}
+            <Link
+              to="/portfolio"
+              className={`text-sm font-medium transition-colors hover:text-primary ${
+                isActive("/portfolio") ? "text-primary" : "text-muted-foreground"
+              }`}
+            >
+              Portfolio
+            </Link>
           </nav>
 
           {/* CTA Button - Noiise style */}
