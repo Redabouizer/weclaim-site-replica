@@ -9,11 +9,10 @@ const Header = () => {
 
   const navigation = [
     { name: "Expertises", href: "/services", hasDropdown: true },
-    { name: "Équipe", href: "/team", hasDropdown: false },
-    { name: "Réalisations", href: "/case-studies", hasDropdown: false },
-    { name: "Blog", href: "/blog", hasDropdown: false },
-    { name: "Carrières", href: "/careers", hasDropdown: false },
-    { name: "Ressources", href: "/resources", hasDropdown: true }
+    { name: "Agences", href: "/agences", hasDropdown: false },
+    { name: "Cas clients", href: "/case-studies", hasDropdown: false },
+    { name: "Ressources", href: "/resources", hasDropdown: true },
+    { name: "Nous découvrir", href: "/about", hasDropdown: true }
   ];
 
   const isActive = (href: string) => location.pathname === href;
@@ -47,12 +46,12 @@ const Header = () => {
             
             {/* Additional direct links */}
             <Link
-              to="/portfolio"
+              to="/about"
               className={`text-sm font-medium transition-colors hover:text-primary ${
-                isActive("/portfolio") ? "text-primary" : "text-muted-foreground"
+                isActive("/about") ? "text-primary" : "text-muted-foreground"
               }`}
             >
-              Portfolio
+              À propos
             </Link>
           </nav>
 

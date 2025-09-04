@@ -1,223 +1,134 @@
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
-import { Users, Award, Shield, Target, Heart, Scale } from "lucide-react";
-import teamMember1 from "@/assets/team-member-1.jpg";
-import teamMember2 from "@/assets/team-member-2.jpg";
-import teamMember3 from "@/assets/team-member-3.jpg";
-import teamMember4 from "@/assets/team-member-4.jpg";
-import teamMember5 from "@/assets/team-member-5.jpg";
-import teamMember6 from "@/assets/team-member-6.jpg";
+import { ArrowRight, Users, Award, History, Target, Heart, Lightbulb, Zap } from "lucide-react";
 
 const About = () => {
-  const team = [
-    {
-      name: "Robert Wilson",
-      role: "Managing Partner",
-      image: teamMember6,
-      bio: "25+ years of experience in corporate law and litigation with a proven track record of successful case outcomes."
-    },
-    {
-      name: "Michelle Davis", 
-      role: "Senior Partner",
-      image: teamMember3,
-      bio: "Expert in personal injury and insurance claims with over $20M recovered for clients in the past 5 years."
-    },
-    {
-      name: "Sarah Johnson",
-      role: "Senior Claims Manager", 
-      image: teamMember1,
-      bio: "Specialized in complex insurance claims and settlements with 15+ years of industry experience."
-    },
-    {
-      name: "Carlos Rodriguez",
-      role: "Lead Legal Counsel",
-      image: teamMember2,
-      bio: "Corporate legal expert with extensive experience in business law, contracts, and compliance matters."
-    },
-    {
-      name: "David Kim",
-      role: "Corporate Attorney",
-      image: teamMember4,
-      bio: "Focuses on mergers & acquisitions, corporate governance, and business dispute resolution."
-    },
-    {
-      name: "Emily Chen",
-      role: "Associate Attorney",
-      image: teamMember5,
-      bio: "Rising talent in employment law and civil litigation with a passion for client advocacy."
-    }
+  const timeline = [
+    { year: "1999", event: "Création de l'agence", description: "Naissance dans l'écosystème digital français" },
+    { year: "2005", event: "Première certification Google", description: "Reconnaissance de notre expertise SEA" },
+    { year: "2010", event: "Expansion nationale", description: "Ouverture de bureaux dans toute la France" },
+    { year: "2015", event: "100 collaborateurs", description: "Croissance de l'équipe et des compétences" },
+    { year: "2020", event: "Leader digital", description: "Plus de 500 clients accompagnés" },
+    { year: "2024", event: "Innovation IA", description: "Intégration de l'IA dans nos processus" }
   ];
 
   const values = [
     {
-      icon: Shield,
-      title: "Integrity",
-      description: "We maintain the highest ethical standards in all our professional dealings."
+      icon: <Heart className="w-8 h-8" />,
+      title: "Transparence",
+      description: "Une communication claire et honnête avec tous nos partenaires, clients et collaborateurs.",
+      color: "bg-red-100"
     },
     {
-      icon: Target,
-      title: "Excellence", 
-      description: "We strive for exceptional results in every case we handle."
+      icon: <Lightbulb className="w-8 h-8" />,
+      title: "Créativité",
+      description: "L'innovation et la créativité au cœur de chaque stratégie pour des résultats exceptionnels.",
+      color: "bg-yellow-100"
     },
     {
-      icon: Heart,
-      title: "Compassion",
-      description: "We understand the personal impact of legal challenges and provide empathetic support."
+      icon: <Zap className="w-8 h-8" />,
+      title: "Agilité",
+      description: "Adaptation rapide aux évolutions du marché digital et aux besoins spécifiques de chaque client.",
+      color: "bg-blue-100"
     },
     {
-      icon: Scale,
-      title: "Justice",
-      description: "We are committed to fighting for fair and just outcomes for all our clients."
+      icon: <Target className="w-8 h-8" />,
+      title: "Innovation",
+      description: "Recherche constante des meilleures technologies et méthodes pour optimiser les performances.",
+      color: "bg-green-100"
     }
   ];
 
-  const stats = [
-    { value: "15+", label: "Years in Business" },
-    { value: "500+", label: "Cases Won" },
-    { value: "$50M+", label: "Recovered for Clients" },
-    { value: "98%", label: "Success Rate" }
-  ];
-
   return (
-    <Layout showFloatingTeam={false}>
+    <Layout>
       {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">About WeClaim</Badge>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Trusted Legal Experts Since 2009
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              WeClaim was founded with a simple mission: to provide exceptional legal services 
-              and claims management while putting our clients' needs first. Today, we're proud 
-              to be one of the most trusted legal firms in the region.
-            </p>
-          </div>
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-primary/5 to-secondary/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Badge variant="outline" className="mb-8 text-primary border-primary/30">
+            Nous découvrir
+          </Badge>
+          
+          <h1 className="text-4xl md:text-6xl font-bold mb-8 leading-tight">
+            Une agence digitale qui fait{" "}
+            <span className="yellow-highlight">la différence</span>
+          </h1>
+          
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+            Depuis plus de 25 ans, WeClaim accompagne les entreprises dans leur transformation digitale 
+            avec passion, expertise et innovation. Découvrez notre histoire, nos valeurs et notre vision.
+          </p>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button asChild className="btn-noiise text-lg px-8 py-4">
+              <Link to="/contact">
+                Travaillons ensemble
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+            <Button asChild className="btn-secondary text-lg px-8 py-4">
+              <Link to="/team">Rencontrer l'équipe</Link>
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* Our Story */}
-      <section className="py-20">
+      {/* Mission & Vision */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge variant="outline" className="mb-4">Our Story</Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Building Trust Through Excellence
+                Notre Mission
               </h2>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                Founded in 2009 by Robert Wilson and Michelle Davis, WeClaim began as a small 
-                practice focused on helping individuals navigate complex insurance claims. Over the 
-                years, we've grown into a full-service legal firm while never losing sight of our 
-                core values: integrity, excellence, and client-first service.
+              <p className="text-lg text-muted-foreground mb-6">
+                Faire entendre la voix de nos clients dans le brouhaha digital actuel. 
+                Nous créons des stratégies sur-mesure qui génèrent de la valeur et des performances mesurables.
               </p>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                Today, our team of experienced attorneys and claims specialists has successfully 
-                recovered over $50 million for our clients and maintained a 98% success rate 
-                across all practice areas. We're proud to be the go-to legal partner for 
-                businesses and individuals throughout the region.
+              <p className="text-lg text-muted-foreground">
+                Chaque projet est une symphonie où discipline, subtilité et excellence 
+                s'orchestrent pour créer une mélodie parfaite entre votre marque et votre public.
               </p>
-              <Button asChild className="btn-hero">
-                <Link to="/contact">Work With Us</Link>
-              </Button>
             </div>
-            
-            <div className="grid grid-cols-2 gap-4">
-              <Card className="p-6 text-center">
-                <Users className="h-8 w-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Client-Focused</h3>
-                <p className="text-sm text-muted-foreground">Every decision we make puts our clients first</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Award className="h-8 w-8 text-secondary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Award-Winning</h3>
-                <p className="text-sm text-muted-foreground">Recognized for excellence in legal services</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Shield className="h-8 w-8 text-accent mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Trusted</h3>
-                <p className="text-sm text-muted-foreground">15+ years of reliable legal representation</p>
-              </Card>
-              <Card className="p-6 text-center">
-                <Target className="h-8 w-8 text-primary mx-auto mb-4" />
-                <h3 className="font-semibold mb-2">Results-Driven</h3>
-                <p className="text-sm text-muted-foreground">Proven track record of successful outcomes</p>
-              </Card>
+            <div className="relative">
+              <img 
+                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=400&fit=crop"
+                alt="Notre mission"
+                className="w-full h-80 object-cover rounded-lg shadow-soft"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="py-20 bg-muted">
+      <section className="py-20 bg-gradient-to-r from-primary/5 to-secondary/5">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Our Values</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What Drives Us Every Day
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Nos Valeurs
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our core values guide every interaction, every case, and every decision we make.
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Les piliers qui guident chacune de nos actions et décisions au quotidien
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <Card key={index} className="p-8 text-center hover:shadow-medium transition-shadow">
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <value.icon className="h-8 w-8 text-primary" />
-                </div>
-                <h3 className="text-xl font-semibold mb-4">{value.title}</h3>
-                <p className="text-muted-foreground">{value.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">Our Team</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Meet Our Expert Legal Team
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our experienced attorneys and legal professionals are dedicated to achieving 
-              the best possible outcomes for our clients.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-large transition-shadow">
-                <div className="aspect-square overflow-hidden">
-                  <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover hover:scale-105 transition-transform"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                  <Badge variant="secondary" className="mb-4">{member.role}</Badge>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
-                </div>
+              <Card key={index} className="bg-white shadow-soft hover:shadow-medium transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <div className={`w-16 h-16 ${value.color} rounded-2xl flex items-center justify-center text-primary mx-auto mb-4`}>
+                    {value.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">
+                    {value.title}
+                  </h3>
+                  <p className="text-muted-foreground">
+                    {value.description}
+                  </p>
+                </CardContent>
               </Card>
             ))}
           </div>
@@ -225,22 +136,24 @@ const About = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+      <section className="py-20 bg-gradient-to-r from-primary to-secondary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Work With Our Expert Team?
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
+            Prêt à faire partie de notre histoire ?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            Contact us today for a free consultation and discover how our experienced 
-            legal team can help you achieve your goals.
+          <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+            Rejoignez les 500+ entreprises qui nous font confiance pour leur croissance digitale.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/contact">Schedule Consultation</Link>
+            <Button asChild className="bg-white text-primary hover:bg-white/90 text-lg px-8 py-4">
+              <Link to="/contact">
+                Démarrer un projet
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link to="/services">View Our Services</Link>
+            <Button asChild variant="outline" className="border-white text-white hover:bg-white hover:text-primary text-lg px-8 py-4">
+              <Link to="/case-studies">Voir nos réalisations</Link>
             </Button>
           </div>
         </div>
