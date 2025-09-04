@@ -32,16 +32,16 @@ const Agences = () => {
       description: "Notre bureau lyonnais spécialisé dans la création de contenu et le webdesign, au service des entreprises de la région Rhône-Alpes."
     },
     {
-      city: "Marseille",
+      city: "Casablanca",
       isHeadquarter: false,
-      address: "89 La Canebière, 13001 Marseille",
-      phone: "+33 4 91 15 28 76",
-      email: "marseille@weclaim.fr",
-      employees: 18,
-      specialties: ["Social Ads", "Analytics", "Mobile Marketing"],
-      image: "https://images.unsplash.com/photo-1590736969955-71cc94901144?w=600&h=400&fit=crop",
-      manager: "Sophie Bernard",
-      description: "Notre agence marseillaise développe l'expertise en publicité sociale et marketing mobile pour le sud de la France."
+      address: "Boulevard Mohammed V, 20000 Casablanca, Maroc",
+      phone: "+212 5 22 45 67 89",
+      email: "casablanca@weclaim.ma",
+      employees: 22,
+      specialties: ["Social Ads", "Analytics", "Mobile Marketing", "E-commerce"],
+      image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73bb4?w=600&h=400&fit=crop",
+      manager: "Youssef Benali",
+      description: "Notre agence marocaine développe l'expertise en publicité sociale et marketing mobile pour l'Afrique du Nord et les marchés francophones."
     },
     {
       city: "Nantes",
@@ -58,8 +58,8 @@ const Agences = () => {
   ];
 
   const stats = [
-    { value: "4", label: "Agences en France", icon: <MapPin className="w-6 h-6" /> },
-    { value: "106", label: "Collaborateurs", icon: <Users className="w-6 h-6" /> },
+    { value: "4", label: "Agences (France & Maroc)", icon: <MapPin className="w-6 h-6" /> },
+    { value: "110", label: "Collaborateurs", icon: <Users className="w-6 h-6" /> },
     { value: "25+", label: "Années d'expérience", icon: <Clock className="w-6 h-6" /> },
     { value: "500+", label: "Clients accompagnés", icon: <Award className="w-6 h-6" /> }
   ];
@@ -79,8 +79,8 @@ const Agences = () => {
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Avec 4 agences strategiquement implantées en France, WeClaim vous accompagne 
-            localement avec l'expertise d'un réseau national de spécialistes du digital.
+            Avec 4 agences strategiquement implantées en France et au Maroc, WeClaim vous accompagne 
+            localement avec l'expertise d'un réseau international de spécialistes du digital.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -123,11 +123,11 @@ const Agences = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Nos Agences en France
+              Nos Agences France & Maroc
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Chaque agence développe une expertise spécialisée tout en bénéficiant 
-              de la force du réseau WeClaim
+              de la force du réseau international WeClaim
             </p>
           </div>
 
@@ -263,7 +263,7 @@ const Agences = () => {
                       Standards nationaux
                     </h3>
                     <p className="text-muted-foreground">
-                      Qualité et méthodologies harmonisées sur l'ensemble du territoire français.
+                      Qualité et méthodologies harmonisées sur l'ensemble de nos territoires d'intervention.
                     </p>
                   </div>
                 </div>
