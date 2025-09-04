@@ -15,6 +15,16 @@ import Team from "./pages/Team";
 import Careers from "./pages/Careers";
 import Portfolio from "./pages/Portfolio";
 import NotFound from "./pages/NotFound";
+// Service pages
+import Ads from "./pages/services/Ads";
+import WebCreation from "./pages/services/WebCreation";
+import SocialMedia from "./pages/services/SocialMedia";
+import Webdesign from "./pages/services/Webdesign";
+import Analytics from "./pages/services/Analytics";
+import MarketingDigital from "./pages/services/MarketingDigital";
+// About pages
+import History from "./pages/about/History";
+import Awards from "./pages/about/Awards";
 
 const queryClient = new QueryClient();
 
@@ -27,8 +37,16 @@ const App = () => (
         <Routes>
           <Route path="/" element={<IndexNoiise />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/services/ads" element={<Ads />} />
+          <Route path="/services/web-creation" element={<WebCreation />} />
+          <Route path="/services/social-media" element={<SocialMedia />} />
+          <Route path="/services/webdesign" element={<Webdesign />} />
+          <Route path="/services/analytics" element={<Analytics />} />
+          <Route path="/services/marketing-digital" element={<MarketingDigital />} />
           <Route path="/agences" element={<Agences />} />
           <Route path="/about" element={<About />} />
+          <Route path="/about/history" element={<History />} />
+          <Route path="/about/awards" element={<Awards />} />
           <Route path="/case-studies" element={<CaseStudies />} />
           <Route path="/resources" element={<Resources />} />
           <Route path="/contact" element={<Contact />} />
