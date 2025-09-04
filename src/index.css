@@ -147,6 +147,18 @@
     box-shadow: var(--shadow-soft);
   }
 
+  /* Pink highlight - Noiise style */
+  .pink-highlight {
+    background: hsl(var(--secondary));
+    padding: 0.1em 0.4em;
+    border-radius: 0.5rem;
+    color: white;
+    display: inline-block;
+    font-weight: 800;
+    transform: rotate(-0.5deg);
+    box-shadow: var(--shadow-soft);
+  }
+
   /* Noiise-style gradient text */
   .gradient-text {
     background: var(--gradient-hero);

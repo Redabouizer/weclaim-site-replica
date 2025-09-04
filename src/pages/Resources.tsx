@@ -3,309 +3,161 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/Layout";
 import { Link } from "react-router-dom";
-import { FileText, Download, Clock, User, BookOpen, Video, Headphones, ArrowRight, Scale, Shield, Users } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const Resources = () => {
   const resources = [
     {
-      category: "Guides & Whitepapers",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Complete Guide to Insurance Claims",
-          description: "Comprehensive 40-page guide covering everything from filing to settlement.",
-          type: "PDF Guide",
-          downloadCount: "2.3k",
-          readTime: "15 min"
-        },
-        {
-          title: "Understanding Personal Injury Law",
-          description: "Essential information for accident victims and their families.",
-          type: "Whitepaper", 
-          downloadCount: "1.8k",
-          readTime: "12 min"
-        },
-        {
-          title: "Corporate Legal Compliance Checklist",
-          description: "Step-by-step checklist for businesses to ensure legal compliance.",
-          type: "Checklist",
-          downloadCount: "3.1k",
-          readTime: "8 min"
-        }
-      ]
+      title: "CURL : le Mantra qui révèle (vraiment) les marques aux IA",
+      description: "Découvrez comment optimiser votre référencement naturel pour les algorithmes de demain.",
+      category: "SEO",
+      color: "bg-gradient-to-br from-blue-100 to-blue-200",
+      illustration: "🤖"
     },
     {
-      category: "Legal Templates",
-      icon: FileText,
-      items: [
-        {
-          title: "Employment Contract Template", 
-          description: "Professionally drafted template for standard employment agreements.",
-          type: "Template",
-          downloadCount: "4.2k",
-          readTime: "5 min"
-        },
-        {
-          title: "Non-Disclosure Agreement (NDA)",
-          description: "Comprehensive NDA template for business relationships.",
-          type: "Template",
-          downloadCount: "5.7k", 
-          readTime: "3 min"
-        },
-        {
-          title: "Demand Letter Templates",
-          description: "Collection of professional demand letter templates for various situations.",
-          type: "Template Pack",
-          downloadCount: "2.9k",
-          readTime: "10 min"
-        }
-      ]
+      title: "WECLAIM obtient la médaille d'argent Ecovadis pour sa politique RSE",
+      description: "Notre engagement pour une agence digitale plus responsable et durable.",
+      category: "Actualités de l'agence",
+      color: "bg-gradient-to-br from-green-100 to-green-200",
+      illustration: "🏆"
     },
     {
-      category: "Video Resources",
-      icon: Video,
-      items: [
-        {
-          title: "How to File an Insurance Claim",
-          description: "Step-by-step video walkthrough of the claims filing process.",
-          type: "Video",
-          downloadCount: "8.1k",
-          readTime: "18 min"
-        },
-        {
-          title: "Understanding Your Legal Rights",
-          description: "Educational video series covering fundamental legal rights.",
-          type: "Video Series",
-          downloadCount: "6.4k",
-          readTime: "45 min"
-        },
-        {
-          title: "Workplace Injury: Know Your Options",
-          description: "Comprehensive overview of options following workplace injuries.",
-          type: "Webinar",
-          downloadCount: "3.7k",
-          readTime: "35 min"
-        }
-      ]
+      title: "Les 4 S Google : évolution du comportement digital",
+      description: "Comprendre les nouveaux parcours clients à l'ère du mobile-first.",
+      category: "Ads",
+      color: "bg-gradient-to-br from-orange-100 to-orange-200",
+      illustration: "📱"
     }
   ];
 
-  const blogPosts = [
-    {
-      title: "5 Common Mistakes in Insurance Claims That Cost You Money",
-      excerpt: "Learn about the most frequent errors people make when filing insurance claims and how to avoid them.",
-      category: "Insurance",
-      author: "Sarah Johnson",
-      readTime: "6 min read",
-      date: "March 15, 2024"
-    },
-    {
-      title: "Understanding Statute of Limitations in Personal Injury Cases", 
-      excerpt: "Important deadlines every accident victim needs to know to protect their legal rights.",
-      category: "Personal Injury",
-      author: "Carlos Rodriguez",
-      readTime: "8 min read", 
-      date: "March 12, 2024"
-    },
-    {
-      title: "Corporate Compliance: New Regulations for 2024",
-      excerpt: "Stay ahead of the curve with our breakdown of important regulatory changes affecting businesses.",
-      category: "Corporate Law",
-      author: "Michelle Davis",
-      readTime: "10 min read",
-      date: "March 8, 2024"
-    }
-  ];
-
-  const faqs = [
-    {
-      question: "How long do I have to file a personal injury claim?",
-      answer: "The statute of limitations varies by state and type of case, but typically ranges from 1-3 years from the date of injury. It's crucial to consult with an attorney as soon as possible to protect your rights."
-    },
-    {
-      question: "What should I do immediately after an accident?",
-      answer: "Seek medical attention first, then document the scene, gather witness information, report the incident to relevant authorities, and contact a qualified attorney to discuss your options."
-    },
-    {
-      question: "How much does it cost to hire WeClaim?",
-      answer: "We offer free initial consultations for most cases. Our fee structure varies by case type - many personal injury cases are handled on contingency (no fee unless we win), while other services may have hourly or flat fees."
-    },
-    {
-      question: "Can you help with cases outside your local area?",
-      answer: "Yes, we handle cases across multiple states and have a network of qualified associates. We can advise you on jurisdiction and the best approach for your specific situation."
-    }
+  const categories = [
+    { name: "SEO", color: "bg-blue-100 text-blue-800" },
+    { name: "Actualités de l'agence", color: "bg-gray-100 text-gray-800" },
+    { name: "Ads", color: "bg-orange-100 text-orange-800" },
+    { name: "Marketing Digital", color: "bg-primary/10 text-primary" }
   ];
 
   return (
     <Layout>
-      {/* Hero Section */}
-      <section className="py-20 bg-gradient-to-r from-primary/10 to-secondary/10">
+      {/* Hero Section - Noiise Style */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Badge variant="outline" className="mb-4">Legal Resources</Badge>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            Knowledge is Your Best Defense
+          <h1 className="text-4xl md:text-6xl font-bold mb-8">
+            Centre de ressources{" "}
+            <span className="yellow-highlight">
+              le jukebox de WECLAIM
+            </span>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Access our comprehensive library of legal guides, templates, and educational 
-            materials designed to help you understand your rights and make informed decisions.
-          </p>
-          <Button asChild size="lg" className="btn-hero">
-            <Link to="#resources">
-              Explore Resources
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
         </div>
       </section>
 
-      {/* Resource Categories */}
-      <section id="resources" className="py-20">
+      {/* Resources Grid - Noiise Style */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {resources.map((category, categoryIndex) => (
-            <div key={categoryIndex} className="mb-16">
-              <div className="flex items-center mb-8">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                  <category.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h2 className="text-2xl md:text-3xl font-bold">{category.category}</h2>
-              </div>
-
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {category.items.map((item, itemIndex) => (
-                  <Card key={itemIndex} className="p-6 hover:shadow-medium transition-shadow">
-                    <div className="flex items-start justify-between mb-4">
-                      <Badge variant="secondary">{item.type}</Badge>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Download className="h-4 w-4 mr-1" />
-                        {item.downloadCount}
-                      </div>
-                    </div>
-
-                    <h3 className="text-lg font-semibold mb-3">{item.title}</h3>
-                    <p className="text-muted-foreground text-sm mb-4">{item.description}</p>
-
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <Clock className="h-4 w-4 mr-1" />
-                        {item.readTime}
-                      </div>
-                      <Button size="sm" variant="outline">
-                        <Download className="h-4 w-4 mr-2" />
-                        Download
-                      </Button>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Blog Section */}
-      <section className="py-20 bg-muted">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">Latest Articles</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Legal Insights & Updates
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Stay informed with our latest articles on legal trends, case updates, and practical advice.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-large transition-shadow">
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <Badge variant="outline">{post.category}</Badge>
-                    <span className="text-sm text-muted-foreground">{post.readTime}</span>
-                  </div>
-
-                  <h3 className="text-lg font-semibold mb-3">{post.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{post.excerpt}</p>
-
-                  <div className="flex items-center justify-between text-sm">
-                    <div className="flex items-center">
-                      <User className="h-4 w-4 mr-2 text-muted-foreground" />
-                      <span>{post.author}</span>
-                    </div>
-                    <span className="text-muted-foreground">{post.date}</span>
-                  </div>
-
-                  <Button variant="outline" size="sm" className="w-full mt-4">
-                    Read Article
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {resources.map((resource, index) => (
+              <Card key={index} className={`${resource.color} p-8 rounded-3xl border-0 hover:shadow-lg transition-shadow cursor-pointer group`}>
+                <div className="text-6xl mb-6">{resource.illustration}</div>
+                <h3 className="text-xl font-bold mb-4 text-foreground">
+                  {resource.title}
+                </h3>
+                <p className="text-muted-foreground mb-6">
+                  {resource.description}
+                </p>
+                <div className="flex items-center justify-between">
+                  <Badge variant="secondary" className="rounded-full">
+                    {resource.category}
+                  </Badge>
+                  <Button variant="ghost" size="sm" className="group-hover:translate-x-1 transition-transform">
+                    <ArrowRight className="h-4 w-4" />
                   </Button>
                 </div>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button asChild variant="outline" size="lg">
-              <Link to="#blog">View All Articles</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <Badge variant="outline" className="mb-4">FAQ</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Find answers to common legal questions and concerns.
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="p-6">
-                <h3 className="text-lg font-semibold mb-3 flex items-start">
-                  <Scale className="h-5 w-5 text-primary mr-3 mt-0.5 flex-shrink-0" />
-                  {faq.question}
-                </h3>
-                <p className="text-muted-foreground ml-8">{faq.answer}</p>
-              </Card>
+          {/* Category Pills - Noiise Style */}
+          <div className="flex flex-wrap justify-center gap-4">
+            {categories.map((category, index) => (
+              <Badge
+                key={index}
+                variant="secondary"
+                className={`${category.color} px-6 py-2 rounded-full text-sm font-medium cursor-pointer hover:shadow-md transition-shadow`}
+              >
+                {category.name}
+              </Badge>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="text-center mt-12">
-            <p className="text-muted-foreground mb-4">
-              Don't see your question answered?
-            </p>
-            <Button asChild className="btn-hero">
-              <Link to="/contact">Ask Our Experts</Link>
-            </Button>
+      {/* Team Section - Noiise Pink Style */}
+      <section className="py-20 bg-gradient-to-r from-pink-500 to-pink-600 text-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="aspect-video bg-white/10 rounded-3xl overflow-hidden relative">
+                <img 
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
+                  alt="Notre équipe passionnée"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-pink-600/20 flex items-center justify-center">
+                  <Button className="bg-white text-pink-600 hover:bg-white/90 rounded-full w-16 h-16 text-xl">
+                    ▶
+                  </Button>
+                </div>
+                <div className="absolute bottom-4 left-4 text-white">
+                  <p className="text-sm font-medium">Lire la vidéo</p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="space-y-6">
+              <p className="text-lg leading-relaxed">
+                Une équipe qui rit fort, parle fort, boit du café fort et des boissons 
+                encore plus fortes. Qui obtient des résultats forts, s'amuse fort et 
+                surtout aime ses clients très très fort. Bref, nous faisons du{" "}
+                <strong className="font-black">bruiiiiiit !</strong> Oui, mais nous le faisons pour nos clients et nous le faisons bien !
+              </p>
+              
+              <h2 className="text-3xl md:text-4xl font-bold leading-tight">
+                Une équipe{" "}
+                <span className="font-black">passionnée, exubérante, volubile, débordante, exaltée...</span>
+                <br />
+                Bref, nous !
+              </h2>
+              
+              <div className="bg-white rounded-lg inline-block">
+                <Button asChild className="text-pink-600 font-semibold px-6 py-3 bg-white hover:bg-gray-50 rounded-lg">
+                  <Link to="/team">
+                    Je rejoins la team !
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+      {/* Call to Action - Noiise Style */}
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Need Personalized Legal Advice?
+          <h2 className="text-3xl md:text-4xl font-bold mb-8">
+            Vous cherchez d'autres ressources ?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto text-white/90">
-            While our resources provide valuable information, every legal situation is unique. 
-            Get personalized advice from our experienced attorneys.
+          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+            Explorez notre blog pour découvrir encore plus de contenus sur le marketing digital, 
+            le référencement et les dernières tendances du web.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" variant="secondary">
-              <Link to="/contact">Free Consultation</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary">
-              <Link to="/services">View Services</Link>
-            </Button>
-          </div>
+          <Button asChild className="btn-noiise text-lg px-8 py-4">
+            <Link to="/blog">
+              Découvrir le blog
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </Button>
         </div>
       </section>
     </Layout>

@@ -214,51 +214,110 @@ const IndexNoiise = () => {
         </div>
       </section>
 
-      {/* Video Section - Noiise Style */}
+      {/* Challenge Section - Noiise Style */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                Travaillez avec une agence digitale qui{" "}
+                <span className="pink-highlight">aime les</span>
+                <br />
+                <span className="pink-highlight">challenges</span>
+              </h2>
+              
+              <p className="text-lg text-muted-foreground mb-6">
+                Depuis 1999, nous unissons nos talents, nos compétences et nos savoir-faire pour un accompagnement 
+                toujours plus personnalisé et adapté. Notre challenge ? Vous mettre sur le devant de la scène avec un site 
+                web qui parle à votre public et qui est optimisé pour être en première page des moteurs de recherche, des 
+                réseaux qui mettent en avant vos valeurs et vos produits et des campagnes publicitaires qui augmentent 
+                votre taux de conversion !
+              </p>
+              
+              <p className="text-lg text-muted-foreground mb-6">
+                WECLAIM, c'est peut-être un détail pour vous, mais pour nous, ce nom veut dire beaucoup. Ce nom fait écho à 
+                ce que nous sommes et ce que nous voulons être demain.
+              </p>
+
+              <Button asChild className="btn-noiise">
+                <Link to="/contact">
+                  Demandez un devis
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Link>
+              </Button>
+            </div>
+            
             <div className="relative">
-              <div className="aspect-video bg-primary rounded-lg overflow-hidden relative">
+              <div className="aspect-video bg-gradient-to-br from-primary to-primary/80 rounded-3xl overflow-hidden relative">
                 <img 
                   src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=600&fit=crop"
                   alt="Notre agence webmarketing"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
-                  <Button className="bg-white text-primary hover:bg-white/90 rounded-full w-16 h-16">
+                  <Button className="bg-white text-primary hover:bg-white/90 rounded-full w-16 h-16 text-xl">
                     ▶
                   </Button>
                 </div>
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm">Lire la vidéo</p>
+                  <p className="text-sm font-medium">Lire la vidéo</p>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Synergies Section - Noiise Style */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="relative">
+              <div className="aspect-video bg-gradient-to-br from-purple-100 to-blue-100 rounded-3xl overflow-hidden relative flex items-center justify-center">
+                <img 
+                  src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
+                  alt="Collaboration et expertise"
+                  className="w-full h-full object-cover"
+                />
+                
+                {/* Green Pills - Noiise Style */}
+                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 space-y-4">
+                  <div className="bg-green-500 text-white px-6 py-3 rounded-full font-bold text-lg">
+                    Performance
+                  </div>
+                  <div className="bg-green-500 text-white px-6 py-3 rounded-full font-bold text-lg">
+                    Collaboration  
+                  </div>
+                  <div className="bg-green-500 text-white px-6 py-3 rounded-full font-bold text-lg">
+                    Expertises
+                  </div>
+                </div>
+              </div>
+            </div>
+            
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                Travaillez avec une agence digitale qui vise{" "}
-                <span className="text-primary">l'excellence</span>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+                Des{" "}
+                <span className="text-green-500">synergies pour une refonte</span>
+                {" "}qui vont au-delà du design
               </h2>
+              
               <p className="text-lg text-muted-foreground mb-6">
-                Notre mission est de vous rendre audible dans le brouhaha actuel. Nous 
-                n'allons pas le faire n'importe comment, ni à n'importe quel prix : nous voulons 
-                à élaborer des stratégies sur-mesure en cohérence avec vos objectifs, vos 
-                moyens et votre potentiel.
+                La <Link to="/services" className="text-primary hover:underline">refonte d'un site</Link> se limite rarement à son design. C'est une occasion idéale 
+                de repenser tous les aspects du site. Au sein de notre agence digitale, nous 
+                intégrons tous les métiers du web mobilisés pour une refonte de site globale. 
+                Nos experts en design, en développement technique et en référencement SEO 
+                travaillent main dans la main en mode projet pour lever tous les freins à 
+                l'atteinte de vos objectifs.
               </p>
-              <p className="text-lg text-muted-foreground mb-6">
-                Cette symphonie bien orchestrée permettra de 
-                créer plus de valeur et de meilleures performances. Chaque stratégie digitale 
-                implique de <strong>l'efficacité</strong> et un <strong>retour sur investissement</strong>, mais aussi de la 
-                <strong> discipline</strong> et de la <strong>subtilité</strong>. C'est à notre sens, le seul moyen d'obtenir une 
-                mélodie parfaite en accord avec votre marque et votre public.
-              </p>
+              
               <p className="text-lg text-muted-foreground mb-8">
-                Chaque aspect de votre présence en ligne est optimisé pour en décupler les 
-                résultats grâce à la mobilisation d'équipes pluridisciplinaires et de ressources 
-                réservées aux plus grandes agences web (outils, data...). <strong>Les expertises, 
-                l'expérience et la sagacité de nos équipes sauront donner le "la" à votre 
-                stratégie et atteindre l'excellence.</strong>
+                La mise en place d'une méthodologie éprouvée permet de fluidifier et 
+                d'optimiser l'ensemble des étapes clés : de la conception graphique des 
+                maquettes jusqu'au recettage SEO. Cette organisation vous offre plus de 
+                sérénité et de transparence tout au long du processus. Réduisez les risques 
+                pour votre référencement et les difficultés inhérentes à un projet de refonte en 
+                le confiant à une agence multidisciplinaire.
               </p>
             </div>
           </div>
