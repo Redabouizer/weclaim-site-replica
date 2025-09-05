@@ -38,7 +38,7 @@ const FloatingTeam = () => {
       name: "David - Content Lead", 
       icon: MessageSquare,
       color: "from-success to-primary",
-      size: "w-14 h-14 md:w-18 md:h-18"
+      size: "w-14 h-14 md:w-20 md:h-20"
     },
     { 
       id: 5, 
@@ -46,7 +46,7 @@ const FloatingTeam = () => {
       name: "Emily - Marketing Dir", 
       icon: Target,
       color: "from-primary to-secondary",
-      size: "w-18 h-18 md:w-22 md:h-22"
+      size: "w-20 h-20 md:w-24 md:h-24"
     },
     { 
       id: 6, 
@@ -99,7 +99,7 @@ const FloatingTeam = () => {
               </div>
               
               {/* Enhanced profile image */}
-              <div className={`${member.size} rounded-full overflow-hidden border-3 border-white/30 shadow-team transition-all duration-500 hover:scale-110 hover:shadow-premium bg-white backdrop-blur-sm`}>
+              <div className={`${member.size} rounded-full overflow-hidden border-[3px] border-white/30 shadow-team transition-all duration-500 hover:scale-110 hover:shadow-premium bg-white backdrop-blur-sm`}>
                 <img 
                   src={member.image} 
                   alt={member.name}

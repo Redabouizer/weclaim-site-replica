@@ -234,7 +234,7 @@ const Team = () => {
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {dept.members.map((member, memberIndex) => (
                   <Card key={memberIndex} className="p-6 text-center hover:shadow-medium transition-all bg-white">
-                    <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-3 border-white shadow-soft">
+                    <div className="w-20 h-20 rounded-full overflow-hidden mx-auto mb-4 border-[3px] border-white shadow-soft">
                       <img 
                         src={member.image} 
                         alt={member.name}
